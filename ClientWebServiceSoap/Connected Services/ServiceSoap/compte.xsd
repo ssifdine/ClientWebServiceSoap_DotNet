@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.hd.saifdine.ma/" targetNamespace="http://ws.hd.saifdine.ma/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="conversion" type="tns:conversion" />
+  <xs:element name="conversionResponse" type="tns:conversionResponse" />
+  <xs:element name="getCompte" type="tns:getCompte" />
+  <xs:element name="getCompteResponse" type="tns:getCompteResponse" />
+  <xs:element name="getComptes" type="tns:getComptes" />
+  <xs:element name="getComptesResponse" type="tns:getComptesResponse" />
+  <xs:complexType name="getCompte">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCompteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:compte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="compte">
+    <xs:sequence>
+      <xs:element name="code" type="xs:int" />
+      <xs:element name="solde" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getComptes">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getComptesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:compte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="conversion">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="conversionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
